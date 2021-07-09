@@ -21,6 +21,9 @@ jobs:
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
+     - shell: bash
+        SUPER_SECRET: ${{ secrets.DOCKERHUB_USERNAME }}
+        run: | example-command "$SUPER_SECRET"
       -
         name: Checkout
         uses: actions/checkout@v2
